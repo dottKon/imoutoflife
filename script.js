@@ -1,5 +1,4 @@
-// var countdownDate = new Date('Feb 16, 2018 16:00:00');
-var countdownDate = new Date('Feb 11, 2018 12:06:00');
+var countdownDate = new Date('Feb 16, 2018 16:00:00');
 var endWeekend = 60*60*24*4*1000 + 60*60*16*1000;
 var distance;
 
@@ -14,6 +13,8 @@ var x = setInterval(function(){
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  var titleminutes = Math.floor((distance / (1000*60)))
+  var titleseconds = Math.floor((distance % (1000*60)/1000))
 
   document.getElementById('counter').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
@@ -36,8 +37,9 @@ var x = setInterval(function(){
     document.getElementById('yesno').innerHTML = 'NOPE';
     document.getElementById('counter').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
-    document.title = days + 'd ' + hours + 'h '
-  + minutes + 'm ' + seconds + 's ' + "to the weekend | I'm Out of life";
+  //   document.title = days + 'd' + hours + 'h'
+  // + minutes + 'm' + seconds + 's' + " to the weekend | I'm Out of life";
+    document.title = titleminutes + 'min ' + titleseconds + 's ' + "to the weekend | I'm out of life"; 
     document.getElementById('startsin').innerHTML = '...and it starts in:';
     document.getElementById("wrapper").className.add = "wrapper";
     $("#wrapper").addClass("wrapper");

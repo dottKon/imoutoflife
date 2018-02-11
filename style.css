@@ -82,9 +82,9 @@ body, html {
 }
 
 .weekendTitle{
-	background-color: #fff !important;
+	background-color: #000 !important;
 	color: #FD00E1 !important;
-	
+
 }
 
 @keyframes example {
