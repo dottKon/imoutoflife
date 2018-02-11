@@ -1,4 +1,5 @@
-var countdownDate = new Date('Feb 16, 2018 16:00:00');
+// var countdownDate = new Date('Feb 16, 2018 16:00:00');
+var countdownDate = new Date('Feb 11, 2018 12:06:00');
 var endWeekend = 60*60*24*4*1000 + 60*60*16*1000;
 var distance;
 
@@ -24,16 +25,21 @@ var x = setInterval(function(){
 
   if(distance>endWeekend){
     document.getElementById('yesno').innerHTML = 'YES!';
-    document.getElementById('counter').innerHTML = 'ENJOY MOTHERFUCKER';
     document.getElementById('startsin').innerHTML = '';
-    document.title = "It's the weekend! | I'm Out of life";
+    document.getElementById('counter').innerHTML = 'ENJOY!';
+    document.title = "It's the weekend! | I'm out of life";
+    $("#wrapper").addClass("wrapperWeekend");
+    $("#yesno").addClass("weekendStyleYesNo");
+    $("#title").addClass("weekendTitle");
+
   }else{
     document.getElementById('yesno').innerHTML = 'NOPE';
     document.getElementById('counter').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
     document.title = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ' + "to the weekend | I'm Out of life";
-    document.getElementById('startsin').innerHTML = 'The weekend starts in:';
-
+    document.getElementById('startsin').innerHTML = '...and it starts in:';
+    document.getElementById("wrapper").className.add = "wrapper";
+    $("#wrapper").addClass("wrapper");
   }
 })
