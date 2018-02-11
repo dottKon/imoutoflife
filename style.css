@@ -1,0 +1,47 @@
+*{
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.wrapper{
+	display: grid;
+	grid-template-rows: 10vh 60vh 10vh 15vh 5vh;
+	text-align: center;
+}
+#title{
+	background-color: #8e0705;
+	color: #eee;
+	font-family: Anton;
+	font-size: 40px;
+}
+
+#yesno{
+	background-color: #111;
+	color: #eee;
+	font-family: Anton;
+	font-size: 300px;
+}
+#startsin{
+	background-color: #111;
+	color: #eee;
+	font-family: Anton;
+	font-size: 40px;
+}
+
+#counter{
+	background-color: #111;
+	color: #eee;
+	font-family: Anton;
+	font-size: 70px;
+}
+#disclaimer{
+	background-color: #111;
+	color: #eee;
+	font-family: Anton;
+	font-size: 15px;
+}
