@@ -1,4 +1,5 @@
 var countdownDate = new Date('Feb 16, 2018 16:00:00');
+var endOfDay = new Date('Feb 14, 2018 17:00:00')
 var endWeekend = 60*60*24*4*1000 + 60*60*16*1000;
 var distance;
 
@@ -8,6 +9,7 @@ var x = setInterval(function(){
   var now = new Date().getTime();
 
   distance = countdownDate - now;
+  fivePM = endOfDay - now;
 
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -16,12 +18,29 @@ var x = setInterval(function(){
   var titleminutes = Math.floor((distance / (1000*60)))
   var titleseconds = Math.floor((distance % (1000*60)/1000))
 
+
+  var hoursFive = Math.floor((fivePM % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutesFive = Math.floor((fivePM % (1000 * 60 * 60)) / (1000 * 60));
+  var secondsFive = Math.floor((fivePM % (1000 * 60)) / 1000);
+
+  weekday = new Date().getDay();
+
+
   document.getElementById('counter').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 
+  if(weekday >= 1 && weekday < 6){
+    document.getElementById('counterFive').innerHTML = "(we're off home in " + hoursFive + 'h ' + minutesFive + 'm ' + secondsFive + 's)';
+  }
+
   if (distance < 0) {
-    nextweek = countdownDate.getTime() + (60*60*24*7*1000);
+    var nextweek = countdownDate.getTime() + (60*60*24*7*1000);
     countdownDate = new Date(nextweek);
+  }
+  console.log(tomorrow);
+  if (fivePM < 0) {
+    var tomorrow = endOfDay.getTime() + (60*60*24*1000);
+    endOfDay = new Date(tomorrow);
   }
 
   if(distance>endWeekend){
