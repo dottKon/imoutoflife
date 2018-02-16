@@ -29,7 +29,7 @@ var x = setInterval(function(){
   document.getElementById('counter').innerHTML = days + 'd ' + hours + 'h '
   + minutes + 'm ' + seconds + 's ';
 
-  if(weekday >= 1 && weekday < 6){
+  if(weekday >= 1 && weekday < 5){
     document.getElementById('counterFive').innerHTML = "(we're off home in " + hoursFive + 'h ' + minutesFive + 'm ' + secondsFive + 's)';
   }
 
