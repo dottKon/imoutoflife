@@ -1,5 +1,5 @@
 var countdownDate = new Date('Feb 16, 2018 16:00:00');
-var endOfDay = new Date('Feb 14, 2018 17:00:00')
+var endOfDay = new Date('Feb 14, 2018 16:00:00')
 var endWeekend = 60*60*24*4*1000 + 60*60*16*1000;
 var distance;
 
